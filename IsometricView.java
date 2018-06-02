@@ -37,12 +37,8 @@ class IsometricView implements Screen {
     @Override
     public void show() {
         matrixAndCameraSetup();
-
         textureAndSpriteSetup();
-
         batch = new PolygonSpriteBatch();
-
-
     }
 
     private void textureAndSpriteSetup() {
@@ -80,7 +76,6 @@ class IsometricView implements Screen {
 
     @Override
     public void render(float delta) {
-
         Gdx.gl.glClearColor(0.15f, 0.1f, 0.12f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -91,15 +86,11 @@ class IsometricView implements Screen {
         for (int z = 0; z < 10; z++) {
             for (int x = 0; x < 10; x++) {
                 tileImg[x][z].draw(batch);
-
             }
         }
-
         batch.setTransformMatrix(new Matrix4(matrix).idt());
         playerSprite.draw(batch);
-
         batch.end();
-
     }
 
     @Override
